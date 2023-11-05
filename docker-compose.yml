@@ -8,7 +8,7 @@ services:
   ports:
    - "8085:8085"
   environment:
-   - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/stationSki
+   - SPRING_DATASOURCE_URL=jdbc:mysql://fayez:3306/devops
    - SPRING_DATASOURCE_USERNAME=root
    - SPRING_DATASOURCE_PASSWORD=
   depends_on:
@@ -17,12 +17,12 @@ services:
    - mynetwork
 
  # MySQL Database
- localhost:
+ fayez:
   image: mysql:8.0
-  container_name: stationSki
+  container_name: devops
   environment:
    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-   - MYSQL_DATABASE=stationSki
+   - MYSQL_DATABASE=devops
   ports:
    - "3306:3306"
   volumes:

@@ -8,7 +8,7 @@ FROM openjdk:11-jre-slim
 ADD target/gestion-station-ski-1.0.jar app.jar
 
 # Expose the port on which your Spring Boot application runs (e.g., 8080)
-EXPOSE 8080
+EXPOSE 8085
 
 # Command to run the Spring Boot application
 CMD ["java", "-jar", "app.jar"]
