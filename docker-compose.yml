@@ -1,11 +1,11 @@
-version '3.3'
+version: '3.3'
 services:
  wordpress:
   image: wordpress
   depends_on:
    - mysql
-  port:
-   -8080:80
+  ports:
+   - 8082:80
   environment:
    WORDPESSS_DB_HOST: mysql
    WORDPRESS_DB_NAME: wordpress
@@ -15,7 +15,7 @@ services:
    - ./wordpress-data:/var/www/html
   networks:
    - my_net
-  mysql:
+ mysql:
    image: mariadb
    environment: 
     MYSQL_ROOT_PASSWORD: wordpress
@@ -23,6 +23,10 @@ services:
     MYSQL_USER: wordpress
     MYSQL_PASSWORD: wordpress
    volumes:
-    mysql-data:
+    - mysql-data:/var/lib/mysql
    networks:
-    my_net:
+    - my_net
+volumes:    
+ mysql-data:
+networks:
+ my_net:
