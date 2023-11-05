@@ -5,7 +5,7 @@ FROM openjdk:11-jre-slim
 
 
 # Copy the compiled Spring Boot JAR file into the container
-ADD target/gestion-station-ski-1.0.jar station-ski-1.0.jar
+ADD target/gestion-station-ski-1.0.jar app.jar
 
 # Expose the port on which your Spring Boot application runs (e.g., 8080)
 EXPOSE 8080
