@@ -53,6 +53,25 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- JaCoCo, Mockito, and JUnit 5 Dependencies -->
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>org.jacoco.core</artifactId>
+			<version>0.8.8</version> <!-- Use the latest version -->
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.12.4</version> <!-- Use the latest version -->
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.2</version> <!-- Use the latest version -->
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -78,8 +97,7 @@
 		<repository>
 			<id>deploymentRepo</id>
 			<name>Nexus Repository</name>
-			<url>http://localhost:8081/repository/maven-releases/</url>
+			<url>http://0.0.0.0:8081/repository/maven-snapshots/</url>
 		</repository>
 	</distributionManagement>
-
 </project>
