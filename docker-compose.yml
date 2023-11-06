@@ -16,7 +16,7 @@ services:
       - app-network
 
 spring-app:
-    image: ahmedsahli/stationski:1.0.0
+    image: fayezz/gestion-station-ski-1.0:latest
     ports:
       - "8089:8089"
     environment:
