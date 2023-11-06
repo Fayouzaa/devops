@@ -1,14 +1,15 @@
-# Use an OpenJDK base image with a package manager
-FROM openjdk:11-jre-slim
+FROM maven:3.8.4-openjdk-11
 
-# Set the working directory inside the container
+WORKDIR /app
 
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN mvn dependency:resolve
 
-# Copy the compiled Spring Boot JAR file into the container
+COPY src ./src
 ADD target/gestion-station-ski-1.0.jar app.jar
 
 # Expose the port on which your Spring Boot application runs (e.g., 8080)
-EXPOSE 8085
+EXPOSE 8089
 
-# Command to run the Spring Boot application
-CMD ["java", "-jar", "app.jar"]
+CMD ["mvn", "spring-boot:run"]
